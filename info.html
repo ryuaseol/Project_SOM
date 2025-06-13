@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Project SOM - info</title>
+
+  <link href="https://cdn.jsdelivr.net/gh/webfontworld/s-core-dream/SCoreDream.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="main.css">
+</head>
+
+
+
+<body>
+<!-- navigation -->
+<nav class="navbar navbar-expand-md bg-white shadow-sm sticky-top">
+  <div class="container">
+    <a href="index.html" href="#main">
+      <img src="img/logo.png" alt="Logo" width= "130px" height= "auto">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="mainNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link active" href="info.html">Info</a></li>
+
+	<li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" href="about.html" id="aboutDropdown" role="button" aria-expanded="false">
+    About
+  </a>
+  <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+    <li><a class="dropdown-item" href="size.html">사이즈</a></li>
+    <li><a class="dropdown-item" href="fabric.html">원단 종류</a></li>
+    <li><a class="dropdown-item" href="type.html">바디 형태</a></li>
+  </ul>
+</li>
+
+        <li class="nav-item"><a class="nav-link" href="prepare.html">Prepare</a></li>
+        <li class="nav-item"><a class="nav-link" href="howtomake.html">How to Make</a></li>
+        <li class="nav-item"><a class="nav-link" href="tips.html">Tips</a></li>
+        <li class="nav-item"><a class="nav-link" href="community.html">Community</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+<!-- info section -->
+<main>
+  <section class="info-content">
+<img src="img/logo.png" alt="logo" width="600" height="auto">
+</section>
+
+
+  <section class="info-content">
+    <h2>🧸 Project SOM은 무엇인가요? 🧸</h2>
+	<br/>
+	<img src="img/info_1.jpg" alt="intro" width="500" height="auto">
+	<br/>
+	<br/>
+	<br/>
+    <p>최근 K-pop 산업에서 팬덤 마케팅 품목으로 '솜인형'이 주목을 받기 시작했을 뿐 더러,<br/>
+	이제는 K-pop을 넘어서 웹툰, 드라마, 영화, 애니메이션 등 다양한 장르에서도 굿즈로 등장하고 있습니다.</p>
+	<p>공식 굿즈가 아닌 비공식 굿즈나 개인 창작물로 솜인형 제작을 원하는 수요는 많아졌지만,<br/>
+	관련 정보는 굉장히 제한적이며 분산되어 있습니다.</p>
+	 <p>특정 SNS, 커뮤니티나 개인 블로그 등 단편적으로 경험담이 공유되고 있을 뿐,<br/>
+	체계적으로 정리된 자료나 참고할 만한 가이드가 많이 부족한 것이 아쉬울 따름입니다.</p>
+	<br/>
+	<br/>
+	<br/>
+	<p>Project SOM은<br/>제한적인 정보로 인해 정보 수집에 어려움을 겪는 솜인덕분들을 위한 웹페이지 입니다.
+     </p>
+    </section>
+
+
+  <section class="info-content">
+    <h2>🧸 우리의 목표 🧸</h2>
+	<br/>
+    <p>본인의 아이디어를 실제 솜인형으로 실현시키고자 하는 솜인덕분들을 위해,<br/>  
+    솜인형 제작 준비와 팁을 아카이빙하여 여러분을 돕는 것이 목표입니다.</p>
+  </section>
+
+
+  <section class="info-content">
+    <h2>🧸 제공 콘텐츠 🧸</h2>
+	<br/>
+    <ul>
+      <li>솜인형에 대한 기본 지식 (원단 종류, 사이즈, 바디 종류 등)</li>
+      <li>제작 준비 단계 안내 (도안 준비, 공장 선택, 사이즈 결정 등)</li>
+      <li>중국 공장을 통한 제작 과정</li>
+      <li>실제 의뢰 경험 및 제작 경험자들의 팁과 주의사항</li>
+      <li>커뮤니티를 통한 정보 공유</li>
+    </ul>
+  </section>
+
+
+  <section class="info-content">
+    <p>🧸 솜인형을 제작하려는 여러분께 유용한 가이드가 되겠습니다 🧸</p>
+  </section>
+</main>
+
+
+
+<!-- Top button -->
+<button type="button" class="btn btn-secondary" id="top-button"
+  data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="맨 위로 이동">
+  ↑
+</button>
+
+
+
+<!-- Footer -->
+<footer>
+  &copy; 2025 Project SOM. All rights reserved.
+</footer>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  const topBtn = document.getElementById("top-button");
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 200) {
+      topBtn.style.display = "block";
+    } else {
+      topBtn.style.display = "none";
+    }
+  });
+  topBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+  const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+  tooltipTriggerList.forEach(el => {
+    new bootstrap.Tooltip(el);
+  });
+</script>
+</body>
+</html>

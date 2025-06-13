@@ -1,0 +1,135 @@
+/* font */
+@font-face {
+  font-family: 'yg-jalnan';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+h1 {
+  font-family: 'yg-jalnan', sans-serif;
+  text-align: center;
+  font-size: 50px; 
+  margin-bottom: 120px;
+  color: #bfa2ff;
+}
+
+h4 {
+  font-family: 'SCoreDream', sans-serif;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+body {
+  font-family: 'SCoreDream', sans-serif;
+  background-color: #ffffff;
+  color: #333333;
+}
+
+
+
+/* Navigation style */
+.navbar {
+  height: 80px;
+}
+
+.nav-link {
+  color: #333333;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-link:hover{
+  color: #73b2ec !important;
+  text-decoration: underline;
+  font-weight: 700;
+}
+
+.nav-link.active {
+  color: #f2b5d4 !important;
+  text-decoration: underline;
+  font-weight: 700;
+}
+
+.navbar-nav {
+  gap: 24px;
+  padding-block: 10px; /* shorthand for top & bottom padding */
+}
+
+.nav-item.dropdown:hover .dropdown-menu {
+  display: block;
+  margin-top: 0;
+}
+
+.dropdown-menu {
+  transition: all 0.2s ease-in-out;
+}
+
+
+
+/* section style */
+    main {
+      max-width: 900px;
+      margin: 80px auto 80px;
+      padding: 0 20px;
+}
+
+    section.comm-content {
+      text-align: center;
+      line-height: 1.8;
+      font-size: 16px;
+      margin-top: 200px;
+      margin-bottom: 70px;
+    }
+
+
+
+/* button style */
+.btn-primary {
+  background-color: #bfa2ff;
+  border-color: #bfa2ff;
+}
+
+.btn-primary:hover {
+  background-color: #a387e8;
+  border-color: #a387e8;
+}
+
+
+
+/* footer style */
+footer {
+  margin-top: 300px;
+  text-align: center;
+  padding: 20px 0px;
+  font-size: 14px;
+  color: #666666;
+  border-top: 1px solid #e5e5e5;
+  background-color: #F5F5F5;
+}
+
+
+
+/* top button style */
+#top-button {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  display: none;
+  border: none;
+
+  font-size: 20px; 
+  width: 60px;
+  height: 60px;
+
+  border-radius: 50%; 
+  line-height: 60px;
+  text-align: center;
+  padding: 0;
+
+  background-color: #333333;
+  text-color: #ffffff;
+}
+
+#top-button:hover {
+  background-color: #7cbbe9;

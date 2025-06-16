@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Project SOM - community</title>
+
+  <link href="https://cdn.jsdelivr.net/gh/webfontworld/s-core-dream/SCoreDream.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="community.css">
+</head>
+
+<body>
+<!-- navigation -->
+<nav class="navbar navbar-expand-md bg-white shadow-sm sticky-top">
+  <div class="container">
+    <a href="index.html">
+      <img src="img/logo.png" alt="Logo" width="130px" height="auto">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="mainNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="info.html">Info</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="about.html" id="aboutDropdown" role="button" aria-expanded="false">
+            About
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+            <li><a class="dropdown-item" href="size.html">사이즈</a></li>
+            <li><a class="dropdown-item" href="fabric.html">원단 종류</a></li>
+            <li><a class="dropdown-item" href="type.html">바디 형태</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="prepare.html">Prepare</a></li>
+        <li class="nav-item"><a class="nav-link" href="howtomake.html">How to Make</a></li>
+        <li class="nav-item"><a class="nav-link" href="tips.html">Tips</a></li>
+        <li class="nav-item"><a class="nav-link active" href="community.html">Community</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <h1>[ 커뮤니티 ]</h1>
+  <h4>솜인형 관련 질문이나 꿀팁들을 공유해주세요!</h4>
+
+  <section class="post-form mb-5">
+    <form id="community-form">
+      <div class="mb-3">
+        <label for="title" class="form-label">제목</label>
+        <input type="text" class="form-control" id="title" name="title" placeholder="제목을 입력하세요" required>
+      </div>
+      <div class="mb-3">
+        <label for="content" class="form-label">내용</label>
+        <textarea class="form-control" id="content" name="content" rows="5" placeholder="내용을 입력하세요" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">글 등록</button>
+    </form>
+  </section>
+
+  <section id="post-list"></section>
+</main>
+
+<!-- Top button -->
+<button type="button" class="btn btn-secondary" id="top-button"
+  data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="맨 위로 이동">
+  ↑
+</button>
+
+<!-- Footer -->
+<footer>
+  &copy; 2025 Project SOM. All rights reserved.
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  const topBtn = document.getElementById("top-button");
+  window.addEventListener("scroll", () => {
+    topBtn.style.display = window.scrollY > 200 ? "block" : "none";
+  });
+  topBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+  const form = document.getElementById("community-form");
+  const postList = document.getElementById("post-list");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    const title = document.getElementById("title").value;
+    const content = document.getElementById("content").value;
+    const now = new Date().toLocaleString();
+
+    const post = document.createElement("div");
+    post.className = "post";
+    post.innerHTML = `
+      <h5>${title}</h5>
+      <p>${content}</p>
+      <div class="post-meta">작성 시간: ${now}</div>
+      <button class="btn btn-sm btn-danger delete-post">삭제</button>
+      <div class="comment-section">
+        <h6>댓글</h6>
+        <div class="comment-input-area">
+          <div class="comment-avatar">🧸</div>
+          <textarea class="comment-input" rows="1" placeholder="댓글을 작성하세요..."></textarea>
+        </div>
+        <button class="comment-submit">댓글 달기</button>
+        <ul class="comment-list"></ul>
+      </div>
+    `;
+    postList.prepend(post);
+    form.reset();
+
+    post.querySelector(".delete-post").addEventListener("click", () => {
+      post.remove();
+    });
+
+    const commentInput = post.querySelector(".comment-input");
+    const commentButton = post.querySelector(".comment-submit");
+    const commentList = post.querySelector(".comment-list");
+
+    commentButton.addEventListener("click", () => {
+      const commentText = commentInput.value.trim();
+      if (commentText !== "") {
+        const li = document.createElement("li");
+        li.innerHTML = `
+          <div class="comment-avatar">🧸</div>
+          <div class="comment-text-box">${commentText}</div>
+        `;
+        commentList.appendChild(li);
+        commentInput.value = "";
+      }
+    });
+  });
+</script>
+</body>
+</html>

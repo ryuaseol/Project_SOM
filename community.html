@@ -88,6 +88,12 @@
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
 
+  const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+  tooltipTriggerList.forEach(el => {
+    new bootstrap.Tooltip(el);
+  });
+
+
   const form = document.getElementById("community-form");
   const postList = document.getElementById("post-list");
 
